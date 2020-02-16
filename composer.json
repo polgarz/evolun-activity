@@ -1,0 +1,31 @@
+{
+    "name": "polgarz/evolun-activity",
+    "description": "Activity extension for Evolun",
+    "keywords": ["evolun", "activity", "volunteering system", "volunteering", "volunteer"],
+    "type": "evolun-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/polgarz/evolun-activity/issues",
+        "source": "https://github.com/polgarz/evolun-activity"
+    },
+    "authors": [
+        {
+            "name": "Polgar Zoltan",
+            "email": "pzoltan@pzoltan.hu",
+            "homepage": "https://www.evolun.hu/"
+        }
+    ],
+    "require": {
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "evolun\\activity\\": ""
+        }
+    }
+}
