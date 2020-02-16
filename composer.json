@@ -2,7 +2,7 @@
     "name": "polgarz/evolun-activity",
     "description": "Activity extension for Evolun",
     "keywords": ["evolun", "activity", "volunteering system", "volunteering", "volunteer"],
-    "type": "evolun-extension",
+    "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
         "issues": "https://github.com/polgarz/evolun-activity/issues",
@@ -16,6 +16,8 @@
         }
     ],
     "require": {
+        "yiisoft/yii2": ">=2.0.8",
+        "yiisoft/yii2-swiftmailer": "*"
     },
     "repositories": [
         {
