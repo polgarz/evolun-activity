@@ -93,12 +93,14 @@ class Module extends \yii\base\Module
         } else {
             if (!Yii::$app->user->isGuest) {
                  Yii::$app->db->createCommand()
-                    ->update($this->userTable,
+                    ->update(
+                        $this->userTable,
                         [
                             $this->lastActivityField => new \yii\db\Expression('NOW()'),
                             $this->inactiveField => 0
                         ],
-                        ['id' => Yii::$app->user->id])
+                        ['id' => Yii::$app->user->id]
+                    )
                     ->execute();
             }
         }

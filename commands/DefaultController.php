@@ -16,7 +16,7 @@ class DefaultController extends Controller
         $users = $this->getInactiveUsers();
         $module = Yii::$app->controller->module;
 
-        foreach($users as $user) {
+        foreach ($users as $user) {
             $lastActivity = new \DateTime($user[$module->lastActivityField]);
             $inactiveDays = $this->calculateInactiveDays($lastActivity, $module->ignoreSummerTime);
 
@@ -30,9 +30,11 @@ class DefaultController extends Controller
 
                 // atallitjuk inaktivra
                 Yii::$app->db->createCommand()
-                    ->update($module->userTable,
+                    ->update(
+                        $module->userTable,
                         [$module->inactiveField => 1],
-                        [$module->emailField => $user['email']])
+                        [$module->emailField => $user['email']]
+                    )
                     ->execute();
             }
         }
@@ -48,7 +50,7 @@ class DefaultController extends Controller
         $users = $this->getInactiveUsers();
         $module = Yii::$app->controller->module;
 
-        foreach($users as $user) {
+        foreach ($users as $user) {
             $lastActivity = new \DateTime($user[$module->lastActivityField]);
             $inactiveDays = $this->calculateInactiveDays($lastActivity, $module->ignoreSummerTime);
 
@@ -93,7 +95,7 @@ class DefaultController extends Controller
         $dateRange = new \DatePeriod($lastActivity, $interval, $today);
         $inactiveDays = 0;
 
-        foreach($dateRange as $date) {
+        foreach ($dateRange as $date) {
             // ha nezzuk a nyarat
             if ($summertime) {
                 // es a datum a nyarra esik, nem szamoljuk
